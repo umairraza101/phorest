@@ -13,7 +13,7 @@ class PhorestApi
     response = HTTParty.get("#{credential(:endpoint)}#{credential(:business_id)}/client#{query}",
                             basic_auth: @auth, headers: @headers)
     result = parse_json(response)
-    result._embedded.clients
+    result._embedded&.clients
   end
 
 
@@ -31,7 +31,6 @@ class PhorestApi
                              basic_auth: @auth, body: query.to_json, headers: @headers)
 
     parse_json(response)
-
 
   end
 
