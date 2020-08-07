@@ -1,4 +1,5 @@
 class PhorestApi
+
   def initialize()
     @auth = {username: credential(:username), password: credential(:password)}
     @headers = {'Content-Type' => 'application/json'}
