@@ -1,0 +1,21 @@
+<div class="container mt-5">
+  <div class="container pr-5 pl-5">
+    <h1> Create Voucher</h1>
+
+    <%= form_tag(vouchers_path) do %>
+
+        <div class="form-group">
+          <%= label_tag :amount %>
+          <%= number_field_tag :amount, @voucher.amount, class: 'form-control ', step: :any %>
+        </div>
+        <div class="form-group">
+          <%= label_tag :client_id %> : <%= @voucher.client_id %>
+          <%= hidden_field_tag :client_id, @voucher.client_id, class: 'form-control' %>
+        </div>
+        <div class="form-group">
+          <%= submit_tag 'Create Voucher', class: 'btn btn-primary' %>
+        </div>
+    <% end %>
+
+  </div>
+</div>
